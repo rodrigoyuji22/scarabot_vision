@@ -1,0 +1,15 @@
+# Ambiente virtual
+.venv/
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Resultados do YOLO
+runs/
+
+# Logs
+*.log
+
+# Arquivos temporários de editor
+.vscode/
