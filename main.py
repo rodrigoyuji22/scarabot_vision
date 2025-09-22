@@ -14,6 +14,7 @@ while True:
         break
 
     cv2.imshow("teste", frame)
+    # quando digito 'q' ele vai pegar um monte de valores e quero apenas o ultimo byte, por isso do & + hexadecimal de 255
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
