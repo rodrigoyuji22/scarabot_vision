@@ -1,5 +1,6 @@
 from ultralytics import YOLO
 import cv2 as cv
+from config import IMGSZ, CONF, IOU
 # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 (usar a gpu para rodar o modelo)
 
 class Vision:
@@ -16,7 +17,7 @@ class Vision:
             ret, frame = self.cap.read()
             if not ret:
                 break
-            results = self.model(frame, imgsz = 800, conf = 0.6, iou = 0.5)
+            results = self.model(frame, imgsz = IMGSZ, conf = CONF, iou = IOU)
             annotated = results[0].plot()
 
             cv.imshow("capture", annotated)

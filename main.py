@@ -1,9 +1,8 @@
 from vision import Vision
 from pathlib import Path
+from config import YOLO_PATH, CAM_ID, FRAME_WIDTH, FRAME_HEIGHT
 
-path = Path("best.pt")
-
-cap = Vision(0, path)
-cap.config_prop(1280,720)
+cap = Vision(CAM_ID, YOLO_PATH)
+cap.config_prop(FRAME_WIDTH, FRAME_WIDTH)
 cap.run_vision()
 
