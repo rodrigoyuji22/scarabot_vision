@@ -7,3 +7,6 @@ def main():
     cap.config_prop(FRAME_WIDTH, FRAME_WIDTH)
     cap.run_vision()
 
+
+main()
+
