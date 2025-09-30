@@ -1,12 +1,12 @@
 from pathlib import Path
 # ------ Câmera ------- #
-CAM_ID = 0
-FRAME_WIDTH = 1280
-FRAME_HEIGHT = 720
+CAM_ID = 1
+FRAME_WIDTH = 640
+FRAME_HEIGHT = 480
 
 # ------ YOLO ------- #
-IMGSZ = 800
-CONF = 0.6
+IMGSZ = 640
+CONF = 0.4
 IOU = 0.5
 
 # ----- PATHS ------ #
