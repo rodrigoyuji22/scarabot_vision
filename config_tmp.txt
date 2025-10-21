@@ -11,4 +11,3 @@ IOU = 0.5
 
 # ----- PATHS ------ #
 YOLO_PATH = Path("best.pt")
-HOMOGRAPHY_PATH = Path("homography.npy")

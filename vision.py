@@ -1,12 +1,11 @@
-from ultralytics import YOLO
 import cv2 as cv
-from config import IMGSZ, CONF, IOU
 # pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118 (usar a gpu para rodar o modelo)
 
 class Vision:
-    def __init__(self, cam, modelPath):
+    def __init__(self, cam):
         self.cap = cv.VideoCapture(cam)
-        self.model = YOLO(modelPath)
+        if not self.cap.isOpened():
+            raise RuntimeError(f"Failed to open camera {cam}")
 
     def config_prop(self, w, h):
         self.cap.set(cv.CAP_PROP_FRAME_WIDTH, w)
@@ -17,13 +16,10 @@ class Vision:
             ret, frame = self.cap.read()
             if not ret:
                 break
-            results = self.model(frame, imgsz = IMGSZ, conf = CONF, iou = IOU)
-            annotated = results[0].plot()
 
-            cv.imshow("capture", annotated)
+            cv.imshow("capture", frame)
+            if cv.waitKey(1) & 0xFF == ord("q"):
+                break
         
         self.cap.release()
         cv.destroyAllWindows()
-
-
-        

@@ -1,10 +1,9 @@
 from vision import Vision
-from pathlib import Path
-from config import YOLO_PATH, CAM_ID, FRAME_WIDTH, FRAME_HEIGHT
+from config import CAM_ID, FRAME_WIDTH, FRAME_HEIGHT
 
 def main():
-    cap = Vision(CAM_ID, YOLO_PATH)
-    cap.config_prop(FRAME_WIDTH, FRAME_WIDTH)
+    cap = Vision(CAM_ID)
+    cap.config_prop(FRAME_WIDTH, FRAME_HEIGHT)
     cap.run_vision()
 
 main()
